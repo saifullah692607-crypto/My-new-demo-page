@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Timers</h1>
+<h2>The setTimeout() Method</h2>
+
+<p id="demo"></p>
+
+<script>
+let count = 0;
+const limit = 10;
+function task() {
+    count++;
+    console.log(`Task executed ${count} time(s)`);
+    my("Hello");
+
+    // Check if we have reached the limit
+    if (count < limit) {
+        // Schedule the next execution after 1 second (1000ms)
+        setTimeout(task, 1000);
+    } else {
+        console.log("Limit reached. Timer stopped.");
+    }
+}
+
+// Start the loop
+task();
+function my(text) {
+let demo = document.getElementById("demo"); 
+  demo.innerHTML += text + "<br>";
+}
+</script>
+
+</body>
+</html>
